@@ -1,427 +1,704 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Mountain Plumbing | 24/7 Premium Plumbing</title>
-    <meta name="description" content="Top-rated 24/7 plumbing services in Wasaga Beach and nearby areas. 5 Stars on Google. Fast, professional, and reliable.">
-    
-    <!-- Google Fonts: Premium/Professional Pairing -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        heading: ['"Libre Baskerville"', 'serif'],
-                        body: ['"Source Sans 3"', 'sans-serif'],
-                    },
-                    colors: {
-                        // Deep Mountain Blue Palette
-                        brand: {
-                            50: '#f0f5f9',
-                            100: '#e1eef5',
-                            200: '#c3deeb',
-                            300: '#95c6dc',
-                            400: '#60a7c9',
-                            500: '#418bb2', 
-                            600: '#327096',
-                            700: '#2a5a7b',
-                            800: '#254b66',
-                            900: '#234056', 
-                            950: '#172a3a', // Deepest Navy
-                        },
-                        // Copper/Bronze Plumbing Accent Palette
-                        accent: {
-                            50: '#fdf8f4',
-                            100: '#f9eee5',
-                            200: '#f1dac4',
-                            300: '#e5be9c',
-                            400: '#d59b6c',
-                            500: '#c87d46', // Base Copper
-                            600: '#ba6638',
-                            700: '#9b502f',
-                            800: '#7f422a',
-                            900: '#663724',
-                            950: '#371a0f',
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harbourview Plumbing Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            secondary: '#0f172a',
+            accent: '#f97316',
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
         }
-    </script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
-    <style>
-        /* Custom Animations */
-        .animate-on-scroll { 
-            opacity: 0; 
-            transform: translateY(20px); 
-            transition: all 0.6s ease-out; 
-        }
-        .animate-on-scroll.visible { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-        
-        body {
-            background-color: #ffffff;
-            color: #475569;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; background: #ffffff; margin: 0; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+    .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    /* Layout guard: force all top-level elements to stack vertically */
+    body > header, body > section, body > footer, body > nav,
+    #lp-root > header, #lp-root > section, #lp-root > footer, #lp-root > nav {
+      display: block !important;
+      width: 100% !important;
+      float: none !important;
+    }
+    #lp-root {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      overflow-x: hidden !important;
+    }
+  </style>
 </head>
-<body class="font-body antialiased overflow-x-hidden selection:bg-accent-500 selection:text-white text-lg leading-relaxed">
+<body style="display:block; width:100%; margin:0; padding:0;">
+<div id="lp-root">
+<header class="fixed top-0 w-full z-50 bg-[#0f172a]/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] flex items-center justify-center shadow-[0_0_15px_rgba(14,165,233,0.4)] group-hover:shadow-[0_0_25px_rgba(14,165,233,0.6)] transition-all">
+                <i data-lucide="droplets" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="text-white text-2xl font-black tracking-tight" style="font-family: 'Outfit', sans-serif;">
+                Harbourview
+            </span>
+        </a>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white border-b border-brand-100 transition-all duration-300 shadow-sm" id="navbar">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center group-hover:bg-brand-100 transition-colors border border-brand-100">
-                        <i data-lucide="droplets" class="text-brand-700 w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <span class="font-heading font-bold text-2xl tracking-tight text-brand-950 block leading-none">Blue Mountain</span>
-                        <span class="font-body font-semibold text-xs text-accent-600 tracking-widest uppercase block mt-1">Plumbing</span>
-                    </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#services" class="text-gray-300 hover:text-[#0ea5e9] text-sm font-semibold tracking-wide uppercase transition-colors" style="font-family: 'Plus Jakarta Sans', sans-serif;">Services</a>
+            <a href="#process" class="text-gray-300 hover:text-[#0ea5e9] text-sm font-semibold tracking-wide uppercase transition-colors" style="font-family: 'Plus Jakarta Sans', sans-serif;">Process</a>
+            <a href="#gallery" class="text-gray-300 hover:text-[#0ea5e9] text-sm font-semibold tracking-wide uppercase transition-colors" style="font-family: 'Plus Jakarta Sans', sans-serif;">Gallery</a>
+            <a href="#about" class="text-gray-300 hover:text-[#0ea5e9] text-sm font-semibold tracking-wide uppercase transition-colors" style="font-family: 'Plus Jakarta Sans', sans-serif;">About</a>
+            <a href="#contact" class="px-6 py-2.5 bg-transparent border border-[#0ea5e9] text-[#0ea5e9] rounded-md hover:bg-[#0ea5e9] hover:text-white text-sm font-bold tracking-wide uppercase transition-all shadow-[0_0_15px_rgba(14,165,233,0.2)] hover:shadow-[0_0_20px_rgba(14,165,233,0.4)]" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                Get a Quote
+            </a>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0f172a] border-b border-white/10 absolute w-full left-0 top-20 shadow-2xl">
+        <div class="flex flex-col px-6 py-6 gap-6">
+            <a href="#services" class="text-gray-300 hover:text-[#0ea5e9] text-lg font-semibold tracking-wide uppercase" style="font-family: 'Plus Jakarta Sans', sans-serif;">Services</a>
+            <a href="#process" class="text-gray-300 hover:text-[#0ea5e9] text-lg font-semibold tracking-wide uppercase" style="font-family: 'Plus Jakarta Sans', sans-serif;">Process</a>
+            <a href="#gallery" class="text-gray-300 hover:text-[#0ea5e9] text-lg font-semibold tracking-wide uppercase" style="font-family: 'Plus Jakarta Sans', sans-serif;">Gallery</a>
+            <a href="#about" class="text-gray-300 hover:text-[#0ea5e9] text-lg font-semibold tracking-wide uppercase" style="font-family: 'Plus Jakarta Sans', sans-serif;">About</a>
+            <a href="#contact" class="inline-block text-center px-6 py-3 bg-[#0ea5e9] text-white rounded-md font-bold tracking-wide uppercase" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                Get a Quote
+            </a>
+        </div>
+    </div>
+</header>
+
+<section id="hero" class="relative min-h-[100svh] flex items-center pt-20 overflow-hidden bg-[#0f172a]">
+    <!-- Background Image with Dark Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://placehold.co/1920x1080/0f172a/ffffff?text=Close+up+of+high-end+modern+matte+black+bathroom+plumbing+fixtures" alt="Modern high-end plumbing fixtures installed by Harbourview Plumbing" class="w-full h-full object-cover opacity-50 object-right md:object-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-[#0f172a]/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent"></div>
+    </div>
+
+    <!-- Decorative Glow Elements -->
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-[#0ea5e9] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#f97316] rounded-full mix-blend-screen filter blur-[150px] opacity-10 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10 w-full py-20 md:py-32">
+        <div class="max-w-3xl animate-on-scroll visible">
+            
+            <!-- Premium Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0ea5e9] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-[#0ea5e9]"></span>
+                </span>
+                <span class="text-xs md:text-sm text-gray-200 uppercase tracking-[0.2em] font-bold" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Premium Plumbing Solutions
+                </span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight" style="font-family: 'Outfit', sans-serif;">
+                Where Flawless Design <br class="hidden md:block"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-white">Meets Perfect Flow.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed font-medium" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                Harbourview Plumbing delivers uncompromising quality for modern homes and commercial spaces. From sexy high-end fixture installations to reliable 24/7 emergency repairs, we set the absolute standard in craftsmanship.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-5 mb-14">
+                <a href="#contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0ea5e9] text-white rounded-md font-bold text-lg hover:bg-[#0284c7] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_-10px_rgba(14,165,233,0.6)] group" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Book a Service
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8">
-                    <div class="flex items-center gap-8 text-sm font-semibold uppercase tracking-wide text-brand-800">
-                        <a href="#services" class="hover:text-accent-600 transition-colors">Services</a>
-                        <a href="#reviews" class="hover:text-accent-600 transition-colors">Reviews</a>
-                    </div>
-                    <div class="h-8 w-px bg-brand-200"></div>
-                    <div class="flex flex-col items-end">
-                        <span class="text-xs text-brand-600 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                            24/7 Emergency
-                        </span>
-                        <a href="tel:7059943424" class="font-heading font-bold text-xl text-brand-950 hover:text-accent-600 transition-colors">
-                            (705) 994-3424
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-brand-950 p-2">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section (Split Layout) -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32 bg-brand-50 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-20">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="max-w-2xl animate-on-scroll">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-200 shadow-sm text-brand-800 text-sm font-semibold mb-8">
-                        <div class="flex text-accent-500">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <span class="ml-1">5 Stars on Google</span>
-                    </div>
-                    
-                    <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-brand-950 leading-[1.15] mb-6">
-                        Premium Plumbing.<br>
-                        <span class="text-accent-600">Zero Compromise.</span>
-                    </h1>
-                    
-                    <p class="text-lg md:text-xl text-brand-800 mb-10 leading-relaxed">
-                        Elevating the standard of plumbing. From emergency repairs to modern installations, we deliver flawless execution 24 hours a day.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:7059943424" class="inline-flex justify-center items-center gap-3 px-8 py-4 bg-brand-800 hover:bg-brand-950 text-white rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                            (705) 994-3424
-                        </a>
-                        <a href="#services" class="inline-flex justify-center items-center gap-3 px-8 py-4 bg-white hover:bg-brand-100 border border-brand-200 text-brand-950 rounded-xl font-semibold text-lg transition-all shadow-sm">
-                            View Services
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hero Image -->
-                <div class="relative hidden lg:block animate-on-scroll" style="transition-delay: 200ms;">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] border-4 border-white">
-                        <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/e2add06c-032a-449d-accb-8e789a88488e/1776902257642-kbeklt.png" alt="Premium Plumbing Services" class="w-full h-full object-cover">
-                        
-                        <!-- Floating Badge -->
-                        <div class="absolute bottom-8 left-8 z-20 bg-white/95 backdrop-blur-md border border-brand-100 p-5 rounded-xl flex items-center gap-4 shadow-xl">
-                            <div class="w-12 h-12 bg-accent-50 rounded-full flex items-center justify-center shrink-0 border border-accent-100">
-                                <i data-lucide="map-pin" class="text-accent-600 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-wide text-brand-600 font-bold mb-1">Currently Serving</p>
-                                <p class="text-brand-950 font-heading font-bold text-lg leading-tight">Wasaga Beach<br><span class="text-sm font-body font-normal text-brand-700">and nearby areas</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Banner -->
-    <section class="border-y border-brand-100 bg-white py-12 relative z-20">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-brand-100 text-center">
-                <div class="px-4 flex flex-col items-center justify-center gap-2 animate-on-scroll">
-                    <div class="flex text-accent-500 mb-2">
-                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                    </div>
-                    <span class="font-heading font-bold text-2xl text-brand-950">5 Stars</span>
-                    <span class="text-brand-700 font-medium">Verified Google Reviews</span>
-                </div>
-                <div class="px-4 pt-8 md:pt-0 flex flex-col items-center justify-center gap-2 animate-on-scroll" style="transition-delay: 100ms;">
-                    <i data-lucide="clock" class="w-8 h-8 text-accent-600 mb-2"></i>
-                    <span class="font-heading font-bold text-2xl text-brand-950">Open 24 Hours</span>
-                    <span class="text-brand-700 font-medium">Always ready for emergencies</span>
-                </div>
-                <div class="px-4 pt-8 md:pt-0 flex flex-col items-center justify-center gap-2 animate-on-scroll" style="transition-delay: 200ms;">
-                    <i data-lucide="shield-check" class="w-8 h-8 text-accent-600 mb-2"></i>
-                    <span class="font-heading font-bold text-2xl text-brand-950">Fully Licensed</span>
-                    <span class="text-brand-700 font-medium">Insured & Certified Professionals</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-28 lg:py-32 bg-white">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-                <h2 class="text-accent-600 font-bold tracking-wide uppercase text-sm mb-4">Our Expertise</h2>
-                <h3 class="font-heading text-4xl md:text-5xl font-bold text-brand-950 mb-6">Sleek Solutions for Complex Problems.</h3>
-                <p class="text-brand-800 text-lg">We don't just fix pipes; we restore peace of mind with precision engineering and unmatched professionalism.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-brand-50 border border-brand-100 p-10 rounded-2xl hover:shadow-lg hover:border-accent-300 transition-all duration-300 animate-on-scroll group">
-                    <div class="w-16 h-16 bg-white rounded-xl shadow-sm border border-brand-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="alert-triangle" class="text-accent-600 w-8 h-8"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-2xl text-brand-950 mb-4">24/7 Emergency</h4>
-                    <p class="text-brand-800 leading-relaxed">Burst pipes or sudden leaks? We deploy immediately to protect your property from water damage, day or night.</p>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-brand-50 border border-brand-100 p-10 rounded-2xl hover:shadow-lg hover:border-accent-300 transition-all duration-300 animate-on-scroll group" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-white rounded-xl shadow-sm border border-brand-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="wrench" class="text-accent-600 w-8 h-8"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-2xl text-brand-950 mb-4">Premium Installs</h4>
-                    <p class="text-brand-800 leading-relaxed">From high-end fixtures to complete bathroom rough-ins, we execute installations with meticulous attention to detail.</p>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-brand-50 border border-brand-100 p-10 rounded-2xl hover:shadow-lg hover:border-accent-300 transition-all duration-300 animate-on-scroll group" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-white rounded-xl shadow-sm border border-brand-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="thermometer" class="text-accent-600 w-8 h-8"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-2xl text-brand-950 mb-4">Water Systems</h4>
-                    <p class="text-brand-800 leading-relaxed">Expert diagnosis, repair, and installation of water heaters, filtration systems, and modern plumbing infrastructure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us / Image Split (Dark Premium Section) -->
-    <section class="py-20 md:py-28 lg:py-32 bg-brand-950 border-y border-brand-900">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative animate-on-scroll">
-                    <div class="absolute -inset-4 bg-accent-500/20 rounded-3xl blur-xl"></div>
-                    <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/e2add06c-032a-449d-accb-8e789a88488e/1776902275852-c720xg.png" alt="Professional Plumbing Work" class="relative z-10 rounded-2xl shadow-2xl object-cover w-full aspect-[4/5] border border-brand-800">
-                </div>
                 
-                <div class="animate-on-scroll" style="transition-delay: 200ms;">
-                    <h2 class="text-accent-400 font-bold tracking-wide uppercase text-sm mb-4">The Blue Mountain Difference</h2>
-                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6">Not Your Average Plumber.</h3>
-                    <p class="text-brand-200 text-lg mb-10 leading-relaxed">
-                        We are redefining the trades. No more waiting around all day, no more hidden fees, and absolutely no mess left behind. We treat your home with the respect it deserves, delivering a seamless, premium experience from the first call to project completion.
-                    </p>
-                    
-                    <ul class="space-y-8">
-                        <li class="flex gap-5">
-                            <div class="w-12 h-12 rounded-full bg-brand-800/50 border border-brand-700 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i data-lucide="check" class="text-accent-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-2">Upfront, Transparent Pricing</h4>
-                                <p class="text-brand-300">You know the exact cost before we start. No surprises.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-5">
-                            <div class="w-12 h-12 rounded-full bg-brand-800/50 border border-brand-700 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i data-lucide="check" class="text-accent-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-2">Immaculate Workspaces</h4>
-                                <p class="text-brand-300">We wear shoe covers and clean up entirely when finished.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-5">
-                            <div class="w-12 h-12 rounded-full bg-brand-800/50 border border-brand-700 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i data-lucide="check" class="text-accent-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-2">Local Experts</h4>
-                                <p class="text-brand-300">Deep understanding of local building codes and plumbing systems.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-20 md:py-28 lg:py-32 bg-brand-50">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 animate-on-scroll">
-                <div class="max-w-2xl">
-                    <h2 class="text-accent-600 font-bold tracking-wide uppercase text-sm mb-4">Client Testimonials</h2>
-                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-brand-950 mb-4">5-Star Excellence.</h3>
-                    <p class="text-brand-800 text-lg">Don't just take our word for it. See why our community trusts Blue Mountain.</p>
-                </div>
-                <div class="mt-8 md:mt-0 flex items-center gap-3 bg-white border border-brand-200 shadow-sm rounded-full px-6 py-3">
-                    <i data-lucide="google" class="w-5 h-5 text-brand-950"></i>
-                    <span class="text-brand-950 font-bold">5 Stars</span>
-                    <span class="text-brand-600 text-sm font-medium">(Verified Reviews)</span>
-                </div>
+                <a href="tel:+17054449691" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#f97316] text-white rounded-md font-bold text-lg hover:bg-[#ea580c] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_-10px_rgba(249,115,22,0.6)] group" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                    <div class="bg-white/20 p-1.5 rounded-full group-hover:animate-bounce">
+                        <i data-lucide="phone" class="w-4 h-4 fill-white"></i>
+                    </div>
+                    24/7 Emergency Call
+                </a>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white border border-brand-100 shadow-sm p-8 rounded-2xl animate-on-scroll">
-                    <div class="flex text-accent-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-800 text-base leading-relaxed mb-8">"We have been very pleased with Blue Mountain Plumbing for several years now. From water heaters to bathrooms and kitchen, the dispatchers, the technicians, and the finance departments all go above and beyond to deliver quality work and often same-day service. We especially appreciate their emergency hours."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-800 font-bold text-lg">C</div>
-                        <div>
-                            <p class="text-brand-950 font-bold">CK Percy</p>
-                            <p class="text-brand-600 text-sm font-medium">Local Guide · 6 months ago</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white border border-brand-100 shadow-sm p-8 rounded-2xl animate-on-scroll" style="transition-delay: 100ms;">
-                    <div class="flex text-accent-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-800 text-base leading-relaxed mb-8">"Christian did all the plumbing for our new commercial gym in Meaford. He did an outstanding job! He worked hard, was very efficient, and clearly knew exactly what he was doing. His professionalism and attention to detail really stood out. I highly recommend Christian to anyone looking for a skilled and honest plumber for either residential or commercial projects."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-800 font-bold text-lg">H</div>
-                        <div>
-                            <p class="text-brand-950 font-bold">Heather McGee</p>
-                            <p class="text-brand-600 text-sm font-medium">2 reviews · 10 months ago</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white border border-brand-100 shadow-sm p-8 rounded-2xl animate-on-scroll" style="transition-delay: 200ms;">
-                    <div class="flex text-accent-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-800 text-base leading-relaxed mb-8">"We are so grateful to Chris from Blue Mountain Plumbing for his incredible act of kindness. He took time out of his own day to come replace a faucet at our local shelter and refused to accept any payment. His generosity and compassion truly made a difference. Thank you for showing up with such a big heart."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-800 font-bold text-lg">J</div>
-                        <div>
-                            <p class="text-brand-950 font-bold">Jennifer Strouth</p>
-                            <p class="text-brand-600 text-sm font-medium">10 months ago</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-950 py-12 border-t border-brand-900">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap items-center gap-8 border-t border-white/10 pt-8">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-brand-900 rounded-full flex items-center justify-center border border-brand-800">
-                        <i data-lucide="droplets" class="text-accent-500 w-5 h-5"></i>
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                        <i data-lucide="shield-check" class="text-[#0ea5e9] w-5 h-5"></i>
                     </div>
                     <div>
-                        <span class="font-heading font-bold text-xl text-white block leading-none">Blue Mountain</span>
-                        <span class="font-body font-semibold text-xs text-accent-400 tracking-widest uppercase block mt-1">Plumbing</span>
+                        <p class="text-white font-bold text-sm" style="font-family: 'Outfit', sans-serif;">Fully Licensed</p>
+                        <p class="text-gray-400 text-xs" style="font-family: 'Plus Jakarta Sans', sans-serif;">& Insured Experts</p>
                     </div>
                 </div>
                 
-                <div class="text-brand-300 text-sm font-medium flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-                    <span>&copy; 2024 Blue Mountain Plumbing. All rights reserved.</span>
-                    <span class="hidden md:inline text-brand-700">•</span>
-                    <span>Serving Wasaga Beach and nearby areas</span>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                        <i data-lucide="award" class="text-[#0ea5e9] w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold text-sm" style="font-family: 'Outfit', sans-serif;">Top Rated</p>
+                        <div class="flex gap-0.5 mt-0.5">
+                            <i data-lucide="star" class="w-3 h-3 fill-[#f97316] text-[#f97316]"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-[#f97316] text-[#f97316]"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-[#f97316] text-[#f97316]"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-[#f97316] text-[#f97316]"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-[#f97316] text-[#f97316]"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 md:py-28 lg:py-32 bg-[#ffffff] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-transparent opacity-50 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 animate-on-scroll">
+            <span class="inline-block py-1 px-3 rounded-full bg-[#0ea5e9]/10 text-[#0ea5e9] text-sm font-bold uppercase tracking-wider mb-4 font-['Plus_Jakarta_Sans']">Our Expertise</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#0f172a] font-['Outfit'] mb-6 leading-tight">Elite Plumbing Solutions for the Modern Property</h2>
+            <p class="text-lg text-[#334155] font-['Plus_Jakarta_Sans'] leading-relaxed">From late-night emergencies to high-end architectural installations, Harbourview Plumbing delivers precision, pristine aesthetics, and unmatched reliability.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <!-- Service Card 1 -->
+            <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll">
+                <div class="w-14 h-14 rounded-xl bg-[#0f172a] text-white flex items-center justify-center mb-6 group-hover:bg-[#0ea5e9] transition-colors duration-300">
+                    <i data-lucide="phone-call" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#0f172a] font-['Outfit'] mb-3">24/7 Emergency</h3>
+                <p class="text-[#334155] font-['Plus_Jakarta_Sans'] text-base leading-relaxed mb-6">Rapid response for bursts, leaks, and critical failures. We secure your property instantly.</p>
+                <a href="#contact" class="inline-flex items-center text-[#0ea5e9] font-bold font-['Plus_Jakarta_Sans'] group-hover:text-[#f97316] transition-colors">
+                    Book Now <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll" style="transition-delay: 100ms;">
+                <div class="w-14 h-14 rounded-xl bg-[#0f172a] text-white flex items-center justify-center mb-6 group-hover:bg-[#0ea5e9] transition-colors duration-300">
+                    <i data-lucide="droplets" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#0f172a] font-['Outfit'] mb-3">Luxury Fixtures</h3>
+                <p class="text-[#334155] font-['Plus_Jakarta_Sans'] text-base leading-relaxed mb-6">Flawless installation of high-end brassware, rainfall showers, and freestanding tubs.</p>
+                <a href="#contact" class="inline-flex items-center text-[#0ea5e9] font-bold font-['Plus_Jakarta_Sans'] group-hover:text-[#f97316] transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll" style="transition-delay: 200ms;">
+                <div class="w-14 h-14 rounded-xl bg-[#0f172a] text-white flex items-center justify-center mb-6 group-hover:bg-[#0ea5e9] transition-colors duration-300">
+                    <i data-lucide="building-2" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#0f172a] font-['Outfit'] mb-3">Commercial Systems</h3>
+                <p class="text-[#334155] font-['Plus_Jakarta_Sans'] text-base leading-relaxed mb-6">Robust plumbing infrastructure for restaurants, retail spaces, and corporate offices.</p>
+                <a href="#contact" class="inline-flex items-center text-[#0ea5e9] font-bold font-['Plus_Jakarta_Sans'] group-hover:text-[#f97316] transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll" style="transition-delay: 300ms;">
+                <div class="w-14 h-14 rounded-xl bg-[#0f172a] text-white flex items-center justify-center mb-6 group-hover:bg-[#0ea5e9] transition-colors duration-300">
+                    <i data-lucide="wrench" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#0f172a] font-['Outfit'] mb-3">Custom Rough-ins</h3>
+                <p class="text-[#334155] font-['Plus_Jakarta_Sans'] text-base leading-relaxed mb-6">Precision pipework and architectural rough-ins designed for longevity and flow efficiency.</p>
+                <a href="#contact" class="inline-flex items-center text-[#0ea5e9] font-bold font-['Plus_Jakarta_Sans'] group-hover:text-[#f97316] transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stats" class="py-20 bg-[#0f172a] relative border-y border-slate-800">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 divide-x-0 md:divide-x divide-slate-800">
+            <div class="text-center animate-on-scroll">
+                <div class="flex justify-center mb-4 text-[#0ea5e9]">
+                    <i data-lucide="timer" class="w-8 h-8"></i>
+                </div>
+                <div class="text-4xl md:text-5xl font-extrabold text-white font-['Outfit'] mb-2">24/7</div>
+                <div class="text-[#0ea5e9] text-sm font-bold uppercase tracking-widest font-['Plus_Jakarta_Sans']">Availability</div>
+            </div>
+            
+            <div class="text-center animate-on-scroll" style="transition-delay: 100ms;">
+                <div class="flex justify-center mb-4 text-[#f97316]">
+                    <i data-lucide="award" class="w-8 h-8"></i>
+                </div>
+                <div class="text-4xl md:text-5xl font-extrabold text-white font-['Outfit'] mb-2">15+</div>
+                <div class="text-[#f97316] text-sm font-bold uppercase tracking-widest font-['Plus_Jakarta_Sans']">Years Experience</div>
+            </div>
+
+            <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                <div class="flex justify-center mb-4 text-[#0ea5e9]">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <div class="text-4xl md:text-5xl font-extrabold text-white font-['Outfit'] mb-2">100%</div>
+                <div class="text-[#0ea5e9] text-sm font-bold uppercase tracking-widest font-['Plus_Jakarta_Sans']">Licensed & Insured</div>
+            </div>
+
+            <div class="text-center animate-on-scroll" style="transition-delay: 300ms;">
+                <div class="flex justify-center mb-4 text-[#f97316]">
+                    <i data-lucide="thumbs-up" class="w-8 h-8"></i>
+                </div>
+                <div class="text-4xl md:text-5xl font-extrabold text-white font-['Outfit'] mb-2">5k+</div>
+                <div class="text-[#f97316] text-sm font-bold uppercase tracking-widest font-['Plus_Jakarta_Sans']">Jobs Completed</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="py-20 md:py-28 lg:py-32 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24 animate-on-scroll">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#0f172a] font-['Outfit'] mb-6">The Harbourview Experience</h2>
+            <p class="text-lg text-[#334155] font-['Plus_Jakarta_Sans']">We've engineered a frictionless process to get your plumbing issues resolved or your custom projects installed with zero headache.</p>
+        </div>
+
+        <div class="relative">
+            <!-- Connecting Line (Desktop) -->
+            <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[#0ea5e9] via-[#f97316] to-[#0ea5e9] opacity-30"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                <!-- Step 1 -->
+                <div class="relative text-center animate-on-scroll">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full border-4 border-[#0ea5e9] flex items-center justify-center mb-6 shadow-xl relative z-10">
+                        <i data-lucide="calendar-clock" class="w-10 h-10 text-[#0f172a]"></i>
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-[#0f172a] text-white rounded-full flex items-center justify-center font-bold font-['Outfit']">1</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#0f172a] font-['Outfit'] mb-4">Request & Dispatch</h3>
+                    <p class="text-[#334155] font-['Plus_Jakarta_Sans'] leading-relaxed">Book online or call our 24/7 hotline. We dispatch a fully-equipped Harbourview technician to your location immediately.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative text-center animate-on-scroll" style="transition-delay: 150ms;">
+                    <div class="w-24 h-24 mx-auto bg-[#0f172a] rounded-full border-4 border-white flex items-center justify-center mb-6 shadow-xl relative z-10">
+                        <i data-lucide="search" class="w-10 h-10 text-white"></i>
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-[#f97316] text-white rounded-full flex items-center justify-center font-bold font-['Outfit']">2</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#0f172a] font-['Outfit'] mb-4">Expert Diagnosis</h3>
+                    <p class="text-[#334155] font-['Plus_Jakarta_Sans'] leading-relaxed">We conduct a thorough, transparent assessment. You receive a precise, upfront quote before any wrench is turned.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative text-center animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full border-4 border-[#f97316] flex items-center justify-center mb-6 shadow-xl relative z-10">
+                        <i data-lucide="check-circle-2" class="w-10 h-10 text-[#0f172a]"></i>
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-[#0f172a] text-white rounded-full flex items-center justify-center font-bold font-['Outfit']">3</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#0f172a] font-['Outfit'] mb-4">Flawless Execution</h3>
+                    <p class="text-[#334155] font-['Plus_Jakarta_Sans'] leading-relaxed">Our masters execute the work with surgical precision, leaving your space cleaner than we found it.</p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- Scripts -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+<section id="gallery" class="py-20 md:py-28 lg:py-32 bg-[#ffffff]">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 animate-on-scroll">
+            <div class="max-w-2xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-[#f97316]/10 text-[#f97316] text-sm font-bold uppercase tracking-wider mb-4 font-['Plus_Jakarta_Sans']">Our Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#0f172a] font-['Outfit'] mb-6 md:mb-0">Plumbing, Elevated.</h2>
+            </div>
+            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-8 py-4 bg-[#0f172a] hover:bg-[#0ea5e9] text-white font-bold rounded-lg transition-colors duration-300 font-['Plus_Jakarta_Sans']">
+                Start Your Project
+            </a>
+        </div>
 
-        // Scroll Animation Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Large Feature Image -->
+            <div class="md:col-span-8 group relative overflow-hidden rounded-2xl shadow-lg animate-on-scroll h-[400px] md:h-[600px]">
+                <img src="https://placehold.co/1200x900/0f172a/ffffff?text=Modern+Freestanding+Tub+Installation+in+Luxury+Bathroom" alt="Modern freestanding tub installation by Harbourview Plumbing in a luxury minimalist bathroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                    <h3 class="text-white text-2xl font-bold font-['Outfit'] mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Freestanding Oasis</h3>
+                    <p class="text-slate-300 font-['Plus_Jakarta_Sans'] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Custom drain alignment and premium fixture mounting.</p>
+                </div>
+            </div>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+            <div class="md:col-span-4 flex flex-col gap-6">
+                <!-- Stacked Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg animate-on-scroll h-[250px] md:h-[calc(300px-12px)]" style="transition-delay: 100ms;">
+                    <img src="https://placehold.co/600x500/0f172a/ffffff?text=Sleek+Copper+Pipe+Manifold+Installation" alt="Exposed sleek copper pipe manifold installation showcasing precision plumbing work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0ea5e9]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold font-['Outfit'] mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Exposed Copper Art</h3>
+                        <p class="text-white/80 text-sm font-['Plus_Jakarta_Sans'] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Industrial chic precision routing.</p>
+                    </div>
+                </div>
 
-        document.querySelectorAll('.animate-on-scroll').forEach((elem) => {
-            observer.observe(elem);
+                <!-- Stacked Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg animate-on-scroll h-[250px] md:h-[calc(300px-12px)]" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/600x500/0f172a/ffffff?text=Luxury+Rainfall+Shower+System+With+Matte+Black+Fixtures" alt="High-end luxury rainfall shower system with matte black fixtures installed in modern shower" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#f97316]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold font-['Outfit'] mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Rainfall Systems</h3>
+                        <p class="text-white/80 text-sm font-['Plus_Jakarta_Sans'] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">High-pressure concealed valve installations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 md:py-28 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Image Side -->
+            <div class="relative animate-on-scroll order-2 lg:order-1">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-[#0ea5e9] to-[#f97316] rounded-3xl opacity-20 blur-2xl"></div>
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://placehold.co/800x1000/0f172a/ffffff?text=Professional+Plumber+Standing+Next+To+Branded+Harbourview+Van" alt="Professional Harbourview Plumbing technician in uniform standing confidently next to a branded modern service van" class="w-full h-auto object-cover">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-6 -right-6 lg:-right-12 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-[240px]">
+                        <div class="flex items-center gap-4 mb-2">
+                            <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center text-[#0ea5e9]">
+                                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            </div>
+                            <div class="font-bold text-[#0f172a] text-2xl font-['Outfit']">5.0/5</div>
+                        </div>
+                        <p class="text-sm text-[#334155] font-['Plus_Jakarta_Sans']">Perfect rating from 8 verified Google reviews.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="animate-on-scroll order-1 lg:order-2">
+                <span class="inline-block py-1 px-3 rounded-full bg-[#0f172a] text-white text-sm font-bold uppercase tracking-wider mb-6 font-['Plus_Jakarta_Sans']">The Harbourview Standard</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#0f172a] font-['Outfit'] mb-6 leading-tight">Redefining What You Expect From A Plumber.</h2>
+                <p class="text-lg text-[#334155] font-['Plus_Jakarta_Sans'] leading-relaxed mb-8">
+                    We built Harbourview Plumbing on a simple premise: plumbing shouldn't be an eyesore, and hiring a plumber shouldn't be a hassle. We bring white-glove professionalism, cutting-edge diagnostic technology, and an unwavering eye for detail to every job site.
+                </p>
+
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-start">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i data-lucide="check" class="w-4 h-4 text-[#0ea5e9]"></i>
+                        </div>
+                        <span class="text-[#334155] font-bold font-['Plus_Jakarta_Sans'] text-lg">Fully Licensed & Master Certified</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-[#f97316]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i data-lucide="check" class="w-4 h-4 text-[#f97316]"></i>
+                        </div>
+                        <span class="text-[#334155] font-bold font-['Plus_Jakarta_Sans'] text-lg">Transparent, Upfront Pricing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i data-lucide="check" class="w-4 h-4 text-[#0ea5e9]"></i>
+                        </div>
+                        <span class="text-[#334155] font-bold font-['Plus_Jakarta_Sans'] text-lg">Immaculate Clean-Up Guarantee</span>
+                    </li>
+                </ul>
+
+                <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#0ea5e9] hover:bg-[#f97316] text-white font-bold rounded-lg transition-all duration-300 shadow-[0_4px_14px_0_rgba(14,165,233,0.39)] hover:shadow-[0_4px_14px_0_rgba(249,115,22,0.39)] hover:-translate-y-0.5 font-['Plus_Jakarta_Sans']">
+                    Meet The Team <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="relative overflow-hidden bg-secondary py-20 md:py-28 lg:py-32" style="--tw-bg-opacity: 1; background-color: rgb(15 23 42 / var(--tw-bg-opacity));">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#0ea5e9] to-[#f97316] rounded-full opacity-20 blur-3xl animate-pulse"></div>
+    <div class="container max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+        <div class="text-center">
+            <h2 class="font-bold text-4xl md:text-5xl text-white font-heading" style="font-family: 'Outfit', sans-serif;">
+                Get a <span class="text-[#0ea5e9]">Fast & Free</span> Estimate
+            </h2>
+            <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                Facing a plumbing issue? Don't wait. Fill out the form below or call us directly. We respond promptly to get your problem solved.
+            </p>
+
+            <!-- Google Rating Badge -->
+            <div class="mt-6 inline-flex items-center gap-3 bg-slate-900/40 backdrop-blur-xl border border-sky-500/20 rounded-full px-5 py-2.5">
+                <div class="flex items-center gap-1">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                </div>
+                <span class="text-white font-bold text-sm" style="font-family: 'Plus Jakarta Sans', sans-serif;">5.0</span>
+                <span class="text-slate-300 text-sm" style="font-family: 'Plus Jakarta Sans', sans-serif;">on Google • 8 Reviews</span>
+            </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <!-- Contact Info Sidebar -->
+            <div class="lg:col-span-2 animate-on-scroll">
+                <div class="bg-slate-900/30 backdrop-blur-xl border border-sky-500/20 shadow-2xl rounded-2xl p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-6" style="font-family: 'Outfit', sans-serif;">
+                        Contact Information
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <a href="tel:+17054449691" class="flex items-start gap-4 group">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 flex items-center justify-center group-hover:bg-[#0ea5e9]/20 transition-all">
+                                <i data-lucide="phone" class="w-5 h-5 text-[#0ea5e9]"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Call Us</p>
+                                <p class="text-white font-bold text-lg group-hover:text-[#0ea5e9] transition-colors" style="font-family: 'Outfit', sans-serif;">(705) 444-9691</p>
+                            </div>
+                        </a>
+
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-[#0ea5e9]"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Visit Us</p>
+                                <p class="text-white font-medium leading-relaxed" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                                    6 Trailwood Pl<br>
+                                    Wasaga Beach, ON L9Z 1M6
+                                </p>
+                                <p class="text-slate-400 text-sm mt-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                                    Plus Code: GX4M+Q2
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/30 flex items-center justify-center">
+                                <i data-lucide="clock" class="w-5 h-5 text-[#0ea5e9]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">Business Hours</p>
+                                <div class="space-y-1.5" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-slate-300">Monday – Friday</span>
+                                        <span class="text-white font-semibold">8:00 AM – 5:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-slate-300">Saturday</span>
+                                        <span class="text-red-400 font-semibold">Closed</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-slate-300">Sunday</span>
+                                        <span class="text-red-400 font-semibold">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-700/50">
+                        <a href="tel:+17054449691" class="flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#0ea5e9]/10 border border-[#0ea5e9]/40 text-[#0ea5e9] font-bold rounded-lg hover:bg-[#0ea5e9] hover:text-white transition-all" style="font-family: 'Outfit', sans-serif;">
+                            <i data-lucide="phone-call" class="w-4 h-4"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-3 animate-on-scroll">
+                <div class="bg-slate-900/30 backdrop-blur-xl border border-sky-500/20 shadow-2xl rounded-2xl p-8 md:p-10">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-200 mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all duration-300" placeholder="e.g. John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-200 mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all duration-300" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-200 mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">How can we help?</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all duration-300" placeholder="Describe your plumbing issue... (e.g., leaky faucet, clogged drain)"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" id="submit-btn" class="w-full px-10 py-4 bg-[#0ea5e9] text-white font-bold rounded-lg shadow-lg hover:bg-sky-400 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-sky-500 text-lg" style="font-family: 'Outfit', sans-serif;">
+                                Request My Free Quote
+                            </button>
+                        </div>
+                        <p id="form-status" class="text-sm text-center pt-2 h-5"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#0f172a] text-slate-300" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-white" style="font-family: 'Outfit', sans-serif;">Harbourview Plumbing Inc</h3>
+                <p class="text-slate-400">Your trusted local experts for all residential and commercial plumbing needs. Quality service you can rely on.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-slate-400 hover:text-[#0ea5e9] transition-colors hover:-translate-y-1 duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#" class="text-slate-400 hover:text-[#0ea5e9] transition-colors hover:-translate-y-1 duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                    <a href="#" class="text-slate-400 hover:text-[#0ea5e9] transition-colors hover:-translate-y-1 duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+                    <a href="#" class="text-slate-400 hover:text-[#0ea5e9] transition-colors hover:-translate-y-1 duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-sm uppercase tracking-wider font-semibold text-slate-200 mb-4" style="font-family: 'Outfit', sans-serif;">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#services" class="hover:text-[#0ea5e9] transition-colors duration-300">Services</a></li>
+                    <li><a href="#about" class="hover:text-[#0ea5e9] transition-colors duration-300">About Us</a></li>
+                    <li><a href="#gallery" class="hover:text-[#0ea5e9] transition-colors duration-300">Our Work</a></li>
+                    <li><a href="#contact" class="hover:text-[#0ea5e9] transition-colors duration-300">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm uppercase tracking-wider font-semibold text-slate-200 mb-4" style="font-family: 'Outfit', sans-serif;">Business Hours</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex items-start">
+                        <i data-lucide="clock" class="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-[#f97316]"></i>
+                        <div>
+                            <span class="block text-slate-200 font-medium">Monday – Friday</span>
+                            <span class="text-sm">8:00 AM – 5:00 PM</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="calendar-x" class="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-[#f97316]"></i>
+                        <div>
+                            <span class="block text-slate-200 font-medium">Saturday – Sunday</span>
+                            <span class="text-sm">Closed</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm uppercase tracking-wider font-semibold text-slate-200 mb-4" style="font-family: 'Outfit', sans-serif;">Get In Touch</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex items-start">
+                        <i data-lucide="map-pin" class="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-[#0ea5e9]"></i>
+                        <span>6 Trailwood Pl, Wasaga Beach, ON L9Z 1M6</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-3 text-[#0ea5e9]"></i>
+                        <a href="tel:+17054449691" class="hover:text-[#0ea5e9] transition-colors duration-300">(705) 444-9691</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i data-lucide="mail" class="w-4 h-4 mr-3 text-[#0ea5e9]"></i>
+                        <a href="#contact" class="hover:text-[#0ea5e9] transition-colors duration-300">Send us a message</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <hr class="border-slate-700 my-8">
+        <div class="text-center text-slate-500 text-sm">
+            <p>&copy; <span id="current-year">2024</span> Harbourview Plumbing Inc. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>
+
+<script>
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    
+    <!-- 👇 EDIT THESE TWO LINES ONLY -->
+    <form id="contact-form" action="https://formspree.io/f/xaqaqkpb" method="POST">
+      
+      <input type="hidden" name="_replyto" value="cawdacreates@gmail.com">
+      <input type="hidden" name="_subject" value="New Website Contact Form Submission">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">Send Message</button>
+    </form>
+
+    <div class="form-message" id="form-message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('form-message');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      msg.style.display = 'none';
+
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
-    </script>
+
+        if (response.ok) {
+          msg.textContent = '✓ Message sent successfully!';
+          msg.className = 'form-message success';
+          form.reset();
+        } else {
+          const errorData = await response.json();
+          msg.textContent = errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Something went wrong.';
+          msg.className = 'form-message error';
+        }
+      } catch (error) {
+        msg.textContent = 'Network error. Please try again.';
+        msg.className = 'form-message error';
+      } finally {
+        msg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</div>
+ 
+</script>
 </body>
 </html>
+
